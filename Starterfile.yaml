@@ -72,5 +72,5 @@ modules:
         init: |
           cd ./${MODULE_REACT_APP_NAME}
           rm ./startout-react-app -r -fo
-          bash ./setup_react.sh
+          git-bash ./setup_react.sh
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
