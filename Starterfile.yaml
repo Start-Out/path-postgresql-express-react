@@ -63,8 +63,8 @@ modules:
       init: |
           mv ./${MODULE_REACT_APP_NAME}/setup_react.sh /tmp/setup_react.sh
           rm -rf ./${MODULE_REACT_APP_NAME}
-          git-bash /tmp/setup_react.sh
-          rm /tmp/setup_react.sh -fo
+          bash /tmp/setup_react.sh
+          rm -f /tmp/setup_react.sh 
       start: |
         cd ./${MODULE_REACT_APP_NAME}
         pnpm start
@@ -73,6 +73,7 @@ modules:
         init: |
           mv ./${MODULE_REACT_APP_NAME}/setup_react.sh /tmp/setup_react.sh
           rm ./${MODULE_REACT_APP_NAME} -r -fo
+          type /tmp/setup_react.sh # DEBUGGING
           git-bash /tmp/setup_react.sh
           rm /tmp/setup_react.sh -fo
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
