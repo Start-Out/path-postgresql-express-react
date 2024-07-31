@@ -71,9 +71,9 @@ modules:
       destroy: rm -rf ./${MODULE_REACT_APP_NAME}
       windows:
         init: |
-          mv ./${MODULE_REACT_APP_NAME}/setup_react.sh /tmp/setup_react.sh
+          mkdir ./tmp
+          mv ./${MODULE_REACT_APP_NAME}/setup_react.sh ./tmp/setup_react.sh
           rm ./${MODULE_REACT_APP_NAME} -r -fo
-          type /tmp/setup_react.sh # DEBUGGING
-          git-bash /tmp/setup_react.sh
-          rm /tmp/setup_react.sh -fo
+          git-bash ./tmp/setup_react.sh
+          rm ./tmp -r -fo
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
