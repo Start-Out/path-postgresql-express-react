@@ -70,5 +70,5 @@ modules:
       windows:
         init: |
           git-bash ./tmp/setup_react.sh
-          # rm ./tmp -r -fo DEBUGGING
+          echo "The directory tmp is safe to remove!"
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
