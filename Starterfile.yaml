@@ -49,7 +49,7 @@ modules:
       windows:
         destroy: rm ./${EXPRESS_DEST} -r -fo
   react:
-    dest: ${MODULE_REACT_APP_NAME}
+    dest: tmp
     init_options:
       - env_name: MODULE_REACT_USE_TYPESCRIPT
         default: true
@@ -61,19 +61,14 @@ modules:
       git: git@github.com:Start-Out/path.module-react.git
     scripts:
       init: |
-          mv ./${MODULE_REACT_APP_NAME}/setup_react.sh /tmp/setup_react.sh
-          rm -rf ./${MODULE_REACT_APP_NAME}
-          bash /tmp/setup_react.sh
-          rm -f /tmp/setup_react.sh 
+          bash ./tmp/setup_react.sh
+          rm -f ./tmp/setup_react.sh 
       start: |
         cd ./${MODULE_REACT_APP_NAME}
         pnpm start
       destroy: rm -rf ./${MODULE_REACT_APP_NAME}
       windows:
         init: |
-          mkdir ./tmp
-          mv ./${MODULE_REACT_APP_NAME}/setup_react.sh ./tmp/setup_react.sh
-          rm ./${MODULE_REACT_APP_NAME} -r -fo
           git-bash ./tmp/setup_react.sh
           rm ./tmp -r -fo
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
