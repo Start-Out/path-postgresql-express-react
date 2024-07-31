@@ -62,7 +62,7 @@ modules:
     scripts:
       init: |
           bash ./tmp/setup_react.sh
-          rm -f ./tmp/setup_react.sh 
+          rm -rf ./tmp 
       start: |
         cd ./${MODULE_REACT_APP_NAME}
         pnpm start
@@ -70,5 +70,5 @@ modules:
       windows:
         init: |
           git-bash ./tmp/setup_react.sh
-          rm ./tmp -r -fo
+          # rm ./tmp -r -fo DEBUGGING
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
