@@ -62,10 +62,15 @@ modules:
     scripts:
       init: |
         cd ./${MODULE_REACT_APP_NAME}
-        pnpm install
+        rm -rf ./startout-react-app
+        bash ./setup_react.sh
       start: |
         cd ./${MODULE_REACT_APP_NAME}
         pnpm start
       destroy: rm -rf ./${MODULE_REACT_APP_NAME}
       windows:
+        init: |
+          cd ./${MODULE_REACT_APP_NAME}
+          rm ./startout-react-app -r -fo
+          bash ./setup_react.sh
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
