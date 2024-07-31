@@ -61,18 +61,18 @@ modules:
       git: git@github.com:Start-Out/path.module-react.git
     scripts:
       init: |
-        rm -rf ./${MODULE_REACT_APP_NAME}/startout-react-app
-        rm -rf ./${MODULE_REACT_APP_NAME}/README.md
-        rm -rf ./${MODULE_REACT_APP_NAME}/.env
-        bash ./${MODULE_REACT_APP_NAME}/setup_react.sh
+          mv ./${MODULE_REACT_APP_NAME}/setup_react.sh /tmp/setup_react.sh
+          rm -rf ./${MODULE_REACT_APP_NAME}
+          git-bash /tmp/setup_react.sh
+          rm /tmp/setup_react.sh -fo
       start: |
         cd ./${MODULE_REACT_APP_NAME}
         pnpm start
       destroy: rm -rf ./${MODULE_REACT_APP_NAME}
       windows:
         init: |
-          rm ./${MODULE_REACT_APP_NAME}/startout-react-app -r -fo
-          rm ./${MODULE_REACT_APP_NAME}/README.md -r -fo
-          rm ./${MODULE_REACT_APP_NAME}/.env -r -fo
-          git-bash ./${MODULE_REACT_APP_NAME}/setup_react.sh
+          mv ./${MODULE_REACT_APP_NAME}/setup_react.sh /tmp/setup_react.sh
+          rm ./${MODULE_REACT_APP_NAME} -r -fo
+          git-bash /tmp/setup_react.sh
+          rm /tmp/setup_react.sh -fo
         destroy: rm ./${MODULE_REACT_APP_NAME} -r -fo
