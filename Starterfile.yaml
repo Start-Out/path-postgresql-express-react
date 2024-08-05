@@ -22,6 +22,21 @@ tools:
       install: npm install -g pnpm
       uninstall: npm uninstall -g pnpm
       check: pnpm --version
+  git-hooks:
+    depends_on: nodejs
+    # Only works with git>=2.9.0
+    scripts:
+      windows:
+        check: |
+          npm install semver
+          ./scripts/check-git.bat
+          npm uninstall semver
+      check: |
+        npm install semver
+        bash ./scripts/check-git.bash
+        npm uninstall semver
+      install: git config --local core.hooksPath .githooks/
+      uninstall: git config --local --unset core.hooksPath
 
 modules:
   postgresql:
