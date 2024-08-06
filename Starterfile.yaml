@@ -22,6 +22,12 @@ tools:
       install: npm install -g pnpm
       uninstall: npm uninstall -g pnpm
       check: pnpm --version
+  create-react-app:
+    depends_on: nodejs
+    scripts:
+      install: npm install -g create-react-app
+      install: npm uninstall -g create-react-app
+      check: create-react-app --version
   git-hooks:
     depends_on: nodejs
     # Only works with git>=2.9.0
