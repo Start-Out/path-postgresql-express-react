@@ -36,7 +36,7 @@ tools:
       check: |
         npm install semver
         bash ./scripts/check-git.bash
-        EXIT_CODE=$?
+        export EXIT_CODE=$?
         npm uninstall semver
         exit $EXIT_CODE
       install: git config --local core.hooksPath .githooks/
