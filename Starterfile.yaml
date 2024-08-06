@@ -30,9 +30,9 @@ tools:
         check: |
           npm install semver
           ./scripts/check-git.bat
-          SET EXIT_CODE=%ERRORLEVEL%
+          $EXIT_CODE = $LASTEXITCODE
           npm uninstall semver
-          exit /b %EXIT_CODE%
+          exit $EXIT_CODE
       check: |
         npm install semver
         bash ./scripts/check-git.bash
