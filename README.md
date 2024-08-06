@@ -6,3 +6,9 @@ Path to a webapp powered by PostgreSQL, Express, and React
 ```shell
 startout-paths Start-Out/path-postgresql-express-react my-new-webapp
 ```
+
+## Default example
+
+> [See this branch](https://github.com/Start-Out/path-postgresql-express-react/tree/demo)
+> 
+> This is the result of calling `startout-starter` on this Path
