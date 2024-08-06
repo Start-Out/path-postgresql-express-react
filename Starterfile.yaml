@@ -46,7 +46,7 @@ modules:
   postgresql:
     dest: ${POSTGRES_DEST}
     source:
-      git: git@github.com:Start-Out/path.module-postgresql.git
+      git: git@github.com:Start-Out/module-postgresql.git
     scripts:
       init: |
         cd ./${POSTGRES_DEST}
@@ -59,7 +59,7 @@ modules:
       - postgresql
     dest: ${EXPRESS_DEST}
     source:
-      git: git@github.com:Start-Out/path.module-express.git
+      git: git@github.com:Start-Out/module-express.git
     scripts:
       init: |
         cd ./${EXPRESS_DEST}
@@ -77,7 +77,7 @@ modules:
         default: startout-react-app
         prompt: What should the React app to be called?
     source:
-      git: git@github.com:Start-Out/path.module-react.git
+      git: git@github.com:Start-Out/module-react.git
     scripts:
       init: |
           bash ./tmp/setup_react.sh
