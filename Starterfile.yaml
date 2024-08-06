@@ -26,7 +26,7 @@ tools:
     depends_on: nodejs
     scripts:
       install: npm install -g create-react-app
-      install: npm uninstall -g create-react-app
+      uninstall: npm uninstall -g create-react-app
       check: create-react-app --version
   git-hooks:
     depends_on: nodejs
