@@ -1,4 +1,6 @@
 #!/bin/bash
+export PATH="./node_modules/.bin:$PATH"
+
 REQUIRED_VERSION="2.9.0"
 VERSION_STRING=$(git --version)
 GIT_VERSION=$(echo $VERSION_STRING | awk '{print $3}')
