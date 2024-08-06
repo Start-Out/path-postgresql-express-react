@@ -30,11 +30,15 @@ tools:
         check: |
           npm install semver
           ./scripts/check-git.bat
+          SET EXIT_CODE=%ERRORLEVEL%
           npm uninstall semver
+          exit /b %EXIT_CODE%
       check: |
         npm install semver
         bash ./scripts/check-git.bash
+        EXIT_CODE=$?
         npm uninstall semver
+        exit $EXIT_CODE
       install: git config --local core.hooksPath .githooks/
       uninstall: git config --local --unset core.hooksPath
 
