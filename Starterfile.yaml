@@ -56,7 +56,7 @@ modules:
     scripts:
       init: |
         cd ./${POSTGRES_DEST}
-        git-bash ./setup_postgresql.sh
+#        git-bash ./setup_postgresql.sh 
       destroy: rm -rf ./${POSTGRES_DEST}
       windows:
         destroy: rm ./${POSTGRES_DEST} -r -fo
