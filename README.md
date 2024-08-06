@@ -1,4 +1,4 @@
-# Path: postgresql-express-react
+# [Path](https://github.com/Start-Out/golden-paths/wiki/Concepts#path): postgresql-express-react
 Path to a webapp powered by PostgreSQL, Express, and React
 
 ## Opening the Path
